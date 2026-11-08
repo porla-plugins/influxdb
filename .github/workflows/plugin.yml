@@ -1,0 +1,16 @@
+name: Plugin
+
+on:
+  pull_request:
+  push:
+    tags: ["v*"]
+
+jobs:
+  plugin:
+    uses: porla/actions/.github/workflows/plugin.yml@7a4d15105912729d7e652c30c157476888689315
+    permissions:
+      contents: write
+    with:
+      porla-version: v0.55.0
+      files: |
+        *.lua
